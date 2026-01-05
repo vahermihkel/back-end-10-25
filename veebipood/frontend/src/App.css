@@ -1,0 +1,43 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.product {
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.icon:active {
+  transform: scale(95%);
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+  min-height: 100vh;
+}

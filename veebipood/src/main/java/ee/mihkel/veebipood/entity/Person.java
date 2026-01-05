@@ -9,6 +9,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
@@ -17,35 +18,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Product {
+public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
-    private double price;
-    private int quantity;
+    private String firstName;
+    private String lastName;
 
-    // @ManyToMany
-    // @ManyToOne
-    // @OneToMany
-    // @OneToOne
+    @Column(unique = true)
+    private String email;
 
-    @ManyToOne
-    private Category category;
-
-//   @ManyToMany     gluteenivaba, laktoosivaba
-//  private List<Characteristic> characteristics
-
-//    @OneToOne
-//    private Toitained toitained;
-
-//    @OneToMany
-//    private List<TranslatedNames> translatedNames
+    private String password;
+    private PersonRole role;
 
     @CreatedDate
     private LocalDateTime created;
-    
+
     @LastModifiedDate
     private LocalDateTime updated;
 }
